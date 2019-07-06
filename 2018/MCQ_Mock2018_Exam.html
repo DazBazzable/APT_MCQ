@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+<head>
+    <title>MCQ Mock Exam</title>
+    <link rel="stylesheet" type="text/css" href="1StyleSheet1.css">
+    <script src="Quiz.js"></script>
+</head>
+
+<header>
+    <h1>MCQ Mock Exam</h1>
+
+    <p class="sub1"> Time left: <span id="timer">190:00</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<em>EMQ 1 - 140 // CAP 1.1 - 2.11&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</em></p>
+
+    <script type="text/javascript">
+        var timeoutHandle;
+        function countdown(minutes) {
+            var seconds = 60;
+            var mins = minutes
+            function tick() {
+                var counter = document.getElementById("timer");
+                var current_minutes = mins - 1
+                seconds--;
+                counter.innerHTML =
+                    current_minutes.toString() + ":" + (seconds < 10 ? "0" : "") + String(seconds);
+                if (seconds > 0) {
+                    timeoutHandle = setTimeout(tick, 1000);
+                } else {
+
+                    if (mins > 1) {
+                        setTimeout(function () { countdown(mins - 1); }, 1000);
+
+                    }
+                }
+            }
+            tick();
+        }
+
+        countdown(190);
+
+
+    </script>
+
+</header>
+<body onload="quizFunction()">
+
+    <button id="submit">Submit Quiz</button>
+    <button id="next">Next Question</button>
+    <button id="previous">Previous Question</button>
+    <div class="quiz-container">
+
+        <div id="quiz"></div>
+    </div>
+
+
+
+    <div id="results"></div>
+
+
+
+</body>
+<footer>
+    <p>&nbsp;</p>
+
+</footer>
