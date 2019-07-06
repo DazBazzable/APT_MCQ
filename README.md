@@ -1,4 +1,4 @@
-# MCQ2018
+# APT MCQ
 
 6th July 2019<br/>
 There are no current issues identified - please feedback however if you find any issues/bugs. This code is provided "as-is", 
